@@ -50,6 +50,18 @@ ul {
 
 .current {
   color: var(--active-color);
+  position: relative;
+}
+
+.current::after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -34px;
+  height: 4px;
+  background-color: var(--active-color);
+  border-radius: 2px;
 }
 
 .contact {
@@ -551,4 +563,48 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+.is-hidden {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.backdrop {
+  cursor: not-allowed;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  transform: scale(1);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  position: relative;
+  width: 528px;
+  height: 581px;
+  margin: auto;
+  cursor: auto;
+  background: var(--light-text-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+  width: 30px;
+  height: 30px;
+  display: block;
+  background-color: var(--light-text-color);
+  position: relative;
+  top: 8px;
+  left: 484px;
+  border: none;
 }
