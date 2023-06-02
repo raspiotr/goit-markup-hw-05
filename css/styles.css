@@ -596,6 +596,7 @@ footer {
   background: var(--light-text-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 
 .modal-close {
@@ -607,4 +608,38 @@ footer {
   top: 8px;
   left: 484px;
   border: none;
+}
+
+.portfolio-box figure {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 370px;
+  height: 294px;
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+.portfolio-box a:hover .portfolio-image-overlay,
+.portfolio-box a:focus .portfolio-image-overlay {
+  transform: translateY(0);
+}
+
+.portfolio-image-overlay p {
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--light-text-color);
+  display: block;
+  margin: 49px 24px auto;
 }
